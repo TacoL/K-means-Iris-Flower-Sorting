@@ -1,0 +1,10 @@
+C:\Users\tahva\OneDrive\Documents\GitHub\K-means-Iris-Flower-Sorting\K-means Iris Flower Sorting\K-means Iris Flower Sorting\bin\Debug\K-means Iris Flower Sorting.exe.config
+C:\Users\tahva\OneDrive\Documents\GitHub\K-means-Iris-Flower-Sorting\K-means Iris Flower Sorting\K-means Iris Flower Sorting\bin\Debug\K-means Iris Flower Sorting.exe
+C:\Users\tahva\OneDrive\Documents\GitHub\K-means-Iris-Flower-Sorting\K-means Iris Flower Sorting\K-means Iris Flower Sorting\bin\Debug\K-means Iris Flower Sorting.pdb
+C:\Users\tahva\OneDrive\Documents\GitHub\K-means-Iris-Flower-Sorting\K-means Iris Flower Sorting\K-means Iris Flower Sorting\obj\Debug\K-means Iris Flower Sorting.csproj.AssemblyReference.cache
+C:\Users\tahva\OneDrive\Documents\GitHub\K-means-Iris-Flower-Sorting\K-means Iris Flower Sorting\K-means Iris Flower Sorting\obj\Debug\K-means Iris Flower Sorting.csproj.SuggestedBindingRedirects.cache
+C:\Users\tahva\OneDrive\Documents\GitHub\K-means-Iris-Flower-Sorting\K-means Iris Flower Sorting\K-means Iris Flower Sorting\obj\Debug\K_means_Iris_Flower_Sorting.Properties.Resources.resources
+C:\Users\tahva\OneDrive\Documents\GitHub\K-means-Iris-Flower-Sorting\K-means Iris Flower Sorting\K-means Iris Flower Sorting\obj\Debug\K-means Iris Flower Sorting.csproj.GenerateResource.cache
+C:\Users\tahva\OneDrive\Documents\GitHub\K-means-Iris-Flower-Sorting\K-means Iris Flower Sorting\K-means Iris Flower Sorting\obj\Debug\K-means Iris Flower Sorting.csproj.CoreCompileInputs.cache
+C:\Users\tahva\OneDrive\Documents\GitHub\K-means-Iris-Flower-Sorting\K-means Iris Flower Sorting\K-means Iris Flower Sorting\obj\Debug\K-means Iris Flower Sorting.exe
+C:\Users\tahva\OneDrive\Documents\GitHub\K-means-Iris-Flower-Sorting\K-means Iris Flower Sorting\K-means Iris Flower Sorting\obj\Debug\K-means Iris Flower Sorting.pdb
