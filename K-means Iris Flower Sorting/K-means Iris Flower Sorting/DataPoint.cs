@@ -32,7 +32,7 @@ namespace K_means_Iris_Flower_Sorting
                 }
             }
 
-            classifiedAs = centroidOfLowestDistance.getCentroidValue();
+            classifiedAs = centroidOfLowestDistance.getCentroidId();
         }
 
         public double[] getPosition()
@@ -43,6 +43,11 @@ namespace K_means_Iris_Flower_Sorting
         public int getClassification()
         {
             return classifiedAs;
+        }
+
+        public double distanceFromCentroid(List<Centroid> centroids)
+        {
+            return Calculations.getDistance(pos, centroids[classifiedAs].getPosition());
         }
 
         /*public static DataPoint operator +(DataPoint a, DataPoint b)

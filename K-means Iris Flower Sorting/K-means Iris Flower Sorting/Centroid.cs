@@ -9,19 +9,21 @@ namespace K_means_Iris_Flower_Sorting
     public class Centroid
     {
         private double[] pos;
-        private int centroidValue;
+        private double[] lastPos;
+        private int centroidId;
 
-        public Centroid(double[] pos, int centroidValue)
+        public Centroid(double[] pos, int centroidId)
         {
             this.pos = pos;
-            this.centroidValue = centroidValue;
+            lastPos = pos; //failsafe
+            this.centroidId = centroidId;
         }
 
         public List<DataPoint> getCorrespondingDataPoints(List<DataPoint> dataPoints)
         {
             List<DataPoint> correspondingPoints = new List<DataPoint>();
             foreach (DataPoint point in dataPoints) {
-                if (point.getClassification() == centroidValue)
+                if (point.getClassification() == centroidId)
                     correspondingPoints.Add(point);
             }
             return correspondingPoints;
@@ -35,17 +37,28 @@ namespace K_means_Iris_Flower_Sorting
                 Calculations.addPositions(meanPos, point.getPosition());
             }
             Calculations.dividePosByInt(meanPos, correspondingPoints.Count);
+            lastPos = pos;
             pos = meanPos;
         }
 
-        public int getCentroidValue()
+        public int getCentroidId()
         {
-            return centroidValue;
+            return centroidId;
         }
 
         public double[] getPosition()
         {
             return pos;
+        }
+
+        public double[] getLastPosition()
+        {
+            return lastPos;
+        }
+
+        public double getDeltaPos()
+        {
+            return Calculations.getDistance(lastPos, pos);
         }
     }
 }
