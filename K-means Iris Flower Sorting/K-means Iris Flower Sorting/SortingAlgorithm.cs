@@ -70,7 +70,8 @@ namespace K_means_Iris_Flower_Sorting
             updateCentroids();
             double sumDeltaCentroidPos = 0;
             centroids.ForEach(centroid => sumDeltaCentroidPos += centroid.getDeltaPos());
-            while (sumDeltaCentroidPos < maxError)
+            Console.WriteLine(sumDeltaCentroidPos);
+            while (sumDeltaCentroidPos > maxError)
             {
                 updateCentroids();
                 sumDeltaCentroidPos = 0;
