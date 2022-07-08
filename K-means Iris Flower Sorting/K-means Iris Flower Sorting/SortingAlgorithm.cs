@@ -13,7 +13,7 @@ namespace K_means_Iris_Flower_Sorting
         private List<DataPoint> dataPoints = new List<DataPoint>();
         private List<Centroid> centroids = new List<Centroid>();
         public static Random r = new Random();
-        public double maxError = 0.01;
+        public double maxError = 0.001;
 
         public SortingAlgorithm(int numClusters, String fileName)
         {
