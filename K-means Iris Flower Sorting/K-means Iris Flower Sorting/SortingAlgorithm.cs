@@ -38,12 +38,8 @@ namespace K_means_Iris_Flower_Sorting
                         if (pos[i] > maxPos[i])
                             maxPos[i] = pos[i];
                     }
-                    else //output. Only here for validity
-                    {
-
-                    }
                 }
-                dataPoints.Add(new DataPoint(pos));
+                dataPoints.Add(new DataPoint(pos, dividedString[4])); //second paramater for validity purposes
             }
             sr.Close();
 
@@ -70,7 +66,6 @@ namespace K_means_Iris_Flower_Sorting
             updateCentroids();
             double sumDeltaCentroidPos = 0;
             centroids.ForEach(centroid => sumDeltaCentroidPos += centroid.getDeltaPos());
-            Console.WriteLine(sumDeltaCentroidPos);
             while (sumDeltaCentroidPos > maxError)
             {
                 updateCentroids();
@@ -78,10 +73,21 @@ namespace K_means_Iris_Flower_Sorting
                 centroids.ForEach(centroid => sumDeltaCentroidPos += centroid.getDeltaPos());
             }
 
-            //calculate WSS
-            double WSS = 0;
-            dataPoints.ForEach(dataPoint => WSS += dataPoint.distanceFromCentroid(centroids));
-            return WSS;
+            //check validity
+            for (int centroidId = 0; centroidId < centroids.Count; centroidId++)
+            {
+                List<DataPoint> correspondingPoints = centroids[centroidId].getCorrespondingDataPoints(dataPoints);
+                //Console.WriteLine("CENTROID " + centroidId);
+                foreach (DataPoint point in correspondingPoints)
+                {
+                    //Console.WriteLine(point.getTrueIdentity());
+                }
+            }
+
+            //calculate SSE
+            double SSE = 0;
+            dataPoints.ForEach(dataPoint => SSE += Math.Pow(dataPoint.distanceFromCentroid(centroids), 2));
+            return SSE;
         }
     }
 }

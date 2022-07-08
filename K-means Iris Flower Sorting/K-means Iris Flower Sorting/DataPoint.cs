@@ -10,10 +10,12 @@ namespace K_means_Iris_Flower_Sorting
     {
         private double[] pos; //consider making it const??
         private int classifiedAs;
+        private string trueIdentity;
 
-        public DataPoint(double[] pos)
+        public DataPoint(double[] pos, string trueIdentity)
         {
             this.pos = pos;
+            this.trueIdentity = trueIdentity;
         }
 
         //methods
@@ -48,6 +50,11 @@ namespace K_means_Iris_Flower_Sorting
         public double distanceFromCentroid(List<Centroid> centroids)
         {
             return Calculations.getDistance(pos, centroids[classifiedAs].getPosition());
+        }
+
+        public string getTrueIdentity()
+        {
+            return trueIdentity;
         }
 
         /*public static DataPoint operator +(DataPoint a, DataPoint b)
