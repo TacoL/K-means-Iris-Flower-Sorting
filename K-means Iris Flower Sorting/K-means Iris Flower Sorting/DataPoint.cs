@@ -24,7 +24,7 @@ namespace K_means_Iris_Flower_Sorting
             double lowestDistance = Calculations.getDistance(pos, centroidOfLowestDistance.getPosition());
             foreach (Centroid centroid in centroids)
             {
-                double distance = Calculations.getDistance(pos, centroidOfLowestDistance.getPosition());
+                double distance = Calculations.getDistance(pos, centroid.getPosition());
                 if (distance < lowestDistance)
                 {
                     lowestDistance = distance;

@@ -39,7 +39,9 @@ namespace K_means_Iris_Flower_Sorting
                             maxPos[i] = pos[i];
                     }
                     else //output. Only here for validity
-                        Console.WriteLine(); //perhaps do something for validity
+                    {
+
+                    }
                 }
                 dataPoints.Add(new DataPoint(pos));
             }

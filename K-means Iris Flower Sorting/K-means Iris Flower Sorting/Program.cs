@@ -18,6 +18,8 @@ namespace K_means_Iris_Flower_Sorting
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
             string fileName = "IRIS.csv";
+            //SortingAlgorithm algo = new SortingAlgorithm(3, fileName);
+            //Console.WriteLine("WSS for K = " + 3 + ":       " + algo.executeAlgorithm());
             int kRange = 5;
             for (int k = 1; k <= kRange; k++)
             {
