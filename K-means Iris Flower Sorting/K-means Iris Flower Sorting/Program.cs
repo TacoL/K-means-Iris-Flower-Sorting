@@ -21,7 +21,7 @@ namespace K_means_Iris_Flower_Sorting
             //SortingAlgorithm algo = new SortingAlgorithm(3, fileName);
             //Console.WriteLine("SSE for K = " + 3 + ":       " + algo.executeAlgorithm());
 
-            int kRange = 5;
+            int kRange = 10;
             double[] averageSSEs = new double[kRange];
             for (int k = 1; k <= kRange; k++)
             {
@@ -37,36 +37,25 @@ namespace K_means_Iris_Flower_Sorting
 
             Console.WriteLine();
 
-            double[] deltas = new double[kRange - 1];
-            double meanDelta = 0;
+            //some property of elbow curve????? explore!! [IMPORTANT]
+
+            /*double[] deltas = new double[kRange - 1];
             for (int i = 0; i < deltas.Length; i++)
             {
                 deltas[i] = averageSSEs[i] - averageSSEs[i + 1];
-                meanDelta += deltas[i];
                 Console.WriteLine(deltas[i]);
             }
-            meanDelta /= deltas.Length;
 
-            //test
-            Console.WriteLine();
-            double[] accelerations = new double[deltas.Length - 1];
-            double meanAccel = 0;
-            for (int i = 0; i < accelerations.Length; i++)
+            Console.WriteLine();*/
+
+            double[] ratios = new double[averageSSEs.Length - 1];
+            for (int i = 0; i < ratios.Length; i++)
             {
-                accelerations[i] = deltas[i] - deltas[i + 1];
-                meanAccel += accelerations[i];
-                Console.WriteLine(accelerations[i]);
+                ratios[i] = averageSSEs[i] / averageSSEs[i + 1];
+                Console.WriteLine(ratios[i]);
             }
-            meanAccel /= accelerations.Length;
-            //end test
 
             //Choose optimal K (ex: deltas[0] -> averageSSEs[1] -> K = 2)
-            int deltasOptimalIdx = 0;
-            for (int i = 0; i < deltas.Length; i++)
-            {
-                if (deltas[i] > meanDelta)
-                    deltasOptimalIdx = i;
-            }
         }
     }
 }
