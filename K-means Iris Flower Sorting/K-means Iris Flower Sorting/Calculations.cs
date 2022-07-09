@@ -33,9 +33,7 @@ namespace K_means_Iris_Flower_Sorting
             double[] vector = deepSubtractPositions(pos2, pos1);
             double distance = 0;
             for (int i = 0; i < vector.Length; i++)
-            {
                 distance += Math.Pow(vector[i], 2);
-            }
             return Math.Sqrt(distance);
         }
 

@@ -33,9 +33,7 @@ namespace K_means_Iris_Flower_Sorting
             List<DataPoint> correspondingPoints = getCorrespondingDataPoints(dataPoints);
             double[] meanPos = new double[dataPoints[0].getPosition().Length];
             foreach (DataPoint point in correspondingPoints)
-            {
                 Calculations.addPositions(meanPos, point.getPosition());
-            }
             Calculations.dividePosByInt(meanPos, correspondingPoints.Count);
             lastPos = pos;
             pos = meanPos;

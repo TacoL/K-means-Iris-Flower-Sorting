@@ -21,7 +21,7 @@ namespace K_means_Iris_Flower_Sorting
             //SortingAlgorithm algo = new SortingAlgorithm(3, fileName);
             //Console.WriteLine("SSE for K = " + 3 + ":       " + algo.executeAlgorithm());
 
-            int kRange = 5;
+            int kRange = 10;
             double[] medianSSEs = new double[kRange];
             for (int k = 1; k <= kRange; k++)
             {
@@ -53,15 +53,15 @@ namespace K_means_Iris_Flower_Sorting
                 Console.WriteLine(deltas[i]);
             }
 
-            Console.WriteLine();
+            //Console.WriteLine();
 
-            Console.WriteLine("Ratios");
-            double[] ratios = new double[deltas.Length - 1];
-            for (int i = 0; i < ratios.Length; i++)
-            {
-                ratios[i] = deltas[i] / deltas[i + 1];
-                Console.WriteLine(ratios[i]);
-            }
+            //Console.WriteLine("Ratios");
+            //double[] ratios = new double[deltas.Length - 1];
+            //for (int i = 0; i < ratios.Length; i++)
+            //{
+            //    ratios[i] = deltas[i] / deltas[i + 1];
+            //    Console.WriteLine(ratios[i]);
+            //}
 
             //Choose optimal K
 
@@ -83,7 +83,7 @@ namespace K_means_Iris_Flower_Sorting
 
             Console.WriteLine("Optimal K = " + optimalK);
 
-            ////some property of elbow curve????? explore!! [IMPORTANT]
+            ////some property of elbow curve????? explore!! (Uses mean instead of median though, so may be wrong)
 
             ///*double[] deltas = new double[kRange - 1];
             //for (int i = 0; i < deltas.Length; i++)
