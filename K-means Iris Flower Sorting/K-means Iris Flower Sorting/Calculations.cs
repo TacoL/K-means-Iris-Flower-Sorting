@@ -38,5 +38,31 @@ namespace K_means_Iris_Flower_Sorting
             }
             return Math.Sqrt(distance);
         }
+
+        public static double[] calculateZScores(double[] arr)
+        {
+            double mean = 0;
+            for (int i = 0; i < arr.Length; i++)
+                mean += arr[i];
+            mean /= arr.Length;
+
+            double sum = 0;
+            for (int i = 0; i < arr.Length; i++)
+                sum += Math.Pow(arr[i] - mean, 2);
+            double SD = Math.Sqrt(sum / arr.Length);
+
+            double[] zScores = new double[arr.Length];
+            for (int i = 0; i < arr.Length; i++)
+                zScores[i] = (arr[i] - mean) / SD;
+            return zScores;
+        }
+
+        public static double calculateMedian(double[] arr)
+        {
+            if (arr.Length % 2 == 0)
+                return (arr[arr.Length / 2 - 1] + arr[arr.Length / 2]) / 2;
+            else
+                return arr[(arr.Length - 1) / 2];
+        }
     }
 }
