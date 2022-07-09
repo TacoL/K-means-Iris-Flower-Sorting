@@ -79,8 +79,9 @@ namespace K_means_Iris_Flower_Sorting
                     lowestAbsZScore = Math.Abs(zScores[i]);
                 }
             }
+            int optimalK = optimalId + 2;
 
-            Console.WriteLine("Optimal K = " + (optimalId + 2));
+            Console.WriteLine("Optimal K = " + optimalK);
 
             ////some property of elbow curve????? explore!! [IMPORTANT]
 
@@ -100,7 +101,11 @@ namespace K_means_Iris_Flower_Sorting
             //    Console.WriteLine(ratios[i]);
             //}
 
-            ////Choose optimal K (ex: deltas[0] -> averageSSEs[1] -> K = 2)
+            Console.WriteLine("\nFinal Test");
+            SortingAlgorithm finalAlgo = new SortingAlgorithm(optimalK, fileName);
+            while (Math.Abs(finalAlgo.executeAlgorithm() - medianSSEs[optimalK - 1]) > 0.001)
+                finalAlgo = new SortingAlgorithm(optimalK, fileName);
+            finalAlgo.checkValidity();
         }
     }
 }

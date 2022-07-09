@@ -60,6 +60,19 @@ namespace K_means_Iris_Flower_Sorting
             centroids.ForEach(centroid => centroid.assignMeanPos(dataPoints));
         }
 
+        public void checkValidity()
+        {
+            for (int centroidId = 0; centroidId < centroids.Count; centroidId++)
+            {
+                List<DataPoint> correspondingPoints = centroids[centroidId].getCorrespondingDataPoints(dataPoints);
+                Console.WriteLine("CENTROID " + centroidId);
+                foreach (DataPoint point in correspondingPoints)
+                {
+                    Console.WriteLine(point.getTrueIdentity());
+                }
+            }
+        }
+
         public double executeAlgorithm()
         {
             //do the thing
@@ -71,17 +84,6 @@ namespace K_means_Iris_Flower_Sorting
                 updateCentroids();
                 sumDeltaCentroidPos = 0;
                 centroids.ForEach(centroid => sumDeltaCentroidPos += centroid.getDeltaPos());
-            }
-
-            //check validity
-            for (int centroidId = 0; centroidId < centroids.Count; centroidId++)
-            {
-                List<DataPoint> correspondingPoints = centroids[centroidId].getCorrespondingDataPoints(dataPoints);
-                //Console.WriteLine("CENTROID " + centroidId);
-                foreach (DataPoint point in correspondingPoints)
-                {
-                    //Console.WriteLine(point.getTrueIdentity());
-                }
             }
 
             //calculate SSE
